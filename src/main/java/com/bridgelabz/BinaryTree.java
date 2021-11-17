@@ -23,5 +23,14 @@ public class BinaryTree {
 	public void add(int value) {
 	    root = addRecursive(root, value);
 	}
-
+	int getSizeRecursive(BinaryTreeNode current) {
+		return current == null ? 0:1 + this.getSizeRecursive(current.left )  +this .getSizeRecursive(current.right);
+		
+	}
+	int getSize()
+	{
+	return this.getSizeRecursive(root);
+		
+	
+	}
 }
