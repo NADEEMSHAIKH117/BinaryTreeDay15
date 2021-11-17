@@ -33,4 +33,19 @@ public class BinaryTree {
 		
 	
 	}
+	
+	private boolean searchRecursively(BinaryTreeNode current, int value) {
+		if (current == null) {
+			return false;
+		}
+		if (value == current.value) {
+			return true;
+		}
+		return value < current.value ? searchRecursively(current.left, value)
+				: searchRecursively(current.right, value);
+	}
+
+	public boolean search(int value) {
+		return searchRecursively(root, value);
+	}
 }
